@@ -75,27 +75,3 @@ nginx_letsencrypt_root: '/usr/share/nginx/challenges'
 # from nginx_default_sites. A complete example is shown later on in this README.
 nginx_sites: {}
 ```
-
-## Example playbook
-
-For the sake of this example let's assume you have a group called **app** and
-you have a typical `site.yml` file.
-
-To use this role edit your `site.yml` file to look something like this:
-
-```yaml
----
-
-- name: Configure app server(s)
-  hosts: app
-  become: True
-
-  roles:
-    - { role: nginx, tags: nginx }
-```
-
-Let's say you want to accomplish the following goals:
-
-- Set up your main site to work on non-www and www
-- Have all www requests get redirected to non-www
-- Set up the main host as the default server

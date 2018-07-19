@@ -41,6 +41,7 @@
 |   |                   `-- sites-available
 |   |                       `-- default.conf.j2
 |   `-- webserver.yml
+|-- README.md
 `-- terraform-vpc
     |-- main.tf
     |-- modules
@@ -61,11 +62,9 @@
     |   |-- vpc
     |   |   `-- aws-vpc.tf
     |   `-- webserver
-    |       `-- aws-webserver.tf
+    |       |-- aws-webserver.tf
+    |       `-- userdata.sh
     |-- provider-credentials.tfvars
     |-- README.md
-    |-- terraform.tfstate
-    |-- terraform.tfstate.backup
     |-- variables.tf
     `-- variables.tfvars
-
