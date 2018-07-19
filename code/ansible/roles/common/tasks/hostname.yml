@@ -1,0 +1,22 @@
+---
+
+- name: Hostname set status
+  shell: ls -al /opt/hostnameset | grep "hostnameset"
+  register: hostname_status
+  ignore_errors: True
+
+- set_fact:
+    ip_id: "{% for i in ansible_default_ipv4.address.split('.') %}\
+            {{ '%03d' | format(i|int) }}\
+            {% endfor %}"
+
+
+- name: Set New Hostname
+  shell: echo 'server{{ ip_id }}'> /proc/sys/kernel/hostname; echo 'server{{ ip_id }}' > /etc/hostname; sed -i 's/^\(127\.0\.0\.1.*\)/\1 server{{ ip_id }}/' /etc/hosts
+  when: hostname_status|failed
+  register: set_hostname
+
+- name: Hostname setup successful
+  command: touch /opt/hostnameset
+  when: set_hostname.changed 
+

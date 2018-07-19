@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Jyoti Bhanot
+  description: Install and configure nginx (SSL A+ by default).
+  min_ansible_version: 2.5.4
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+
+  categories:
+  - system
+  - networking
+  - web
+
+dependencies: []

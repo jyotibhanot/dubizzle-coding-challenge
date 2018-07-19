@@ -1,0 +1,6 @@
+---
+# tasks file for common
+- include: apt.yml
+  tags: ['apt']
+- include: hostname.yml
+  tags: ['hostname']

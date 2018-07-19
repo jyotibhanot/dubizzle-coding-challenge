@@ -1,0 +1,6 @@
+[bastion]
+#<bastion_ip> 
+
+[webserver]
+#<webserver_ip>
+

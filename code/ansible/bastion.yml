@@ -1,0 +1,9 @@
+---
+- name: Setup Bastion server
+  hosts: bastion
+  user: ubuntu
+  sudo: yes
+
+  roles:
+     - {role: common, tags: ['common']} 
+

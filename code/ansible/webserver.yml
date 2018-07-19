@@ -1,0 +1,9 @@
+---
+- name: Setup nginx server
+  hosts: webserver
+  user: ubuntu
+  sudo: yes
+
+  roles:
+     - {role: common, tags: ['common']} 
+     - {role: nginx, tags: ['nginx']}

@@ -1,0 +1,9 @@
+---
+nginx_sites:
+  default:
+    domains: ['example.com', 'www.example.com']
+    default_server: True
+  dubizzle:
+    domains: ['dubizzle.example.com']
+    serve_assets:
+      enabled: False
