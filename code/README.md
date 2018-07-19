@@ -1,3 +1,4 @@
+```
 . 
 |-- ansible 
 |   |-- bastion.yml 
@@ -70,3 +71,4 @@
     `-- variables.tfvars 
  
 32 directories, 37 files 
+```
