@@ -30,7 +30,13 @@ The global VPC variables are in the `variables.tfvars` file so edit this file an
 
 Each `.tf` file in the `tf` subdirectory is Terraform playbook where our VPC resources are being created. The `variables.tf` file contains all the variables being used and their values are being populated by the settings in the `variables.tfvars`.
 
-To begin, start by issuing the following command inside the `tf` directory:  
+To begin, start by issuing the following command inside the `tf` directory: 
+
+```
+$ terraform init
+```
+The terraform init command is used to initialize a working directory containing Terraform configuration files.This command performs several different initialization steps in order to prepare a working directory for use.
+ 
 ```
 $ terraform plan -var-file variables.tfvars -var-file provider-credentials.tfvars -out vpc.tfplan
 ```  
